@@ -1,9 +1,5 @@
 <?php
 
-/**
- * Парсер PHP
- * Class Parser
- */
 class Parser
 {
     /**

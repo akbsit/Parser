@@ -1,40 +1,36 @@
 # Parser
 
-Короткая запись получения страницы:
+A short recording of page retrieval:
 
 ```php
 $arHtml = Parser::getPage([
-    "url" => "http://httpbin.org/ip" // string Ссылка на страницу
+    "url" => "http://httpbin.org/ip"
 ]);
 ```
 
-При успешной отработке возвращает – **массив с данными о странице** в другом случае – **false**.
+If successful, returns **array with page data**; otherwise, **false**.
 
-Дополнительные параметры:
+Extra options:
 
 ```php
-"useragent" => "Mozilla/5.0", // string Содержимое заголовка "User-Agent: ", посылаемого в HTTP-запросе
-"timeout" => 5, // int Максимально позволенное количество секунд для выполнения CURL-функций
-"connecttimeout" => 5, // int Количество секунд ожидания при попытке соединения
-"head" => false, // bool Для вывода заголовков без тела документа
+"useragent" => "Mozilla/5.0",
+"timeout" => 5,
+"connecttimeout" => 5,
+"head" => false,
 "cookie" => [
-    "file" => "cookie.txt", // string Файл для хранения cookie
-    "session" => false // bool Для указания текущему сеансу начать новую "сессию" cookies
+    "file" => "cookie.txt",
+    "session" => false
 ]
 "proxy" => [
-    "ip" => "127.0.0.1", // string IP адрес прокси сервера
-    "port" => 80, // int Порт прокси сервера
-    "type" => "CURLPROXY_HTTP" // string Тип прокси сервера
+    "ip" => "127.0.0.1",
+    "port" => 80,
+    "type" => "CURLPROXY_HTTP"
 ],
-"headers" => [ // array Массив устанавливаемых HTTP-заголовков
+"headers" => [
     "Content-type: text/plain",
     "Content-length: 100"
 ],
-"post" => "'param1=val1&param2=val2" // string Все данные, передаваемые в HTTP POST-запросе
+"post" => "'param1=val1&param2=val2"
 ```
 
-Все дополнительные параметры не обязательны для заполнения.
-
-# Статья
-
-[Пишем парсер контента на PHP](http://falbar.ru/article/pishem-parser-kontenta-na-php)
+All additional parameters are optional.
